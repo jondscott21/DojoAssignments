@@ -1,0 +1,9 @@
+create a repo from github
+cd DojoAssignments
+git init
+git add .
+git commit -m " "
+copy command lines from github for the push
+make a readMe.md adding text
+
+
