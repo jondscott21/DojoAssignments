@@ -1,0 +1,40 @@
+.wrapper {
+    padding: 50px;
+    height: 100%;
+    width: 100%;
+}
+.square {
+    width: 140px;
+    height: 140px;
+    background: blue;
+    margin-bottom: 40px;
+}
+.circle {
+    height: 140px;
+    width: 140px;
+    border-radius: 70px;
+    background: blue;
+    margin-bottom: 40px;
+}
+.triangle {
+    border-left: 70px solid transparent;
+    border-right: 70px solid transparent;
+    border-bottom: 140px solid blue;
+    height: 0px;
+    width: 0px;
+    margin-bottom: 40px;
+}
+.pacman {
+    height: 0;
+    width: 0;
+    border-right: 70px solid transparent;
+    border-top: 70px solid blue;
+    border-bottom: 70px solid blue;
+    border-left: 70px solid blue;
+    border-bottom-left-radius: 70px;
+    border-bottom-right-radius: 70px;
+    border-top-left-radius: 70px;
+    border-top-right-radius: 70px;
+
+
+}
