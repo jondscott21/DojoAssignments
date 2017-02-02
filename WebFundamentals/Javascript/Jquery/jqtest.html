@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!--<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js></script>-->
+  <script type="text/javascript" src="jquery-3.1.1.js"></script>
+  <script type="text/javascript">
+      $(document).ready(function() {
+
+        $(".hide_button").click(function () {
+            $("h1").hide();
+        });
+
+        $(".show_button").click(function () {
+            $("h1").show();
+        });
+
+        $(".toggle_button").click(function () {
+            $(".webpic1").toggle("slow", function () {
+                
+            })
+        });
+
+        $(".jquery_functions").find("h2").click(function () {
+            $("p").slideUp(800, function () {
+                $("p").slideDown(800, function () {
+                    
+                })
+                
+            })
+            
+        });
+
+        $(".slide_toggle_button").click(function () {
+            $(".webpic2").slideToggle()
+        });
+
+        $(".red").css("background", "red");
+
+        $(".add_class_button").click(function () {
+            $(".add_class_button").addClass("red")
+            $(".red").css("background", "red");
+        });
+          $(".fade_out_button").click(function () {
+              $("h4").fadeOut(700)
+          });
+
+        $(".fade_in_button").click(function () {
+            $("h4").fadeIn(700)
+        });
+
+        $(".before_function").click(function () {
+            $(".before_function").before("Jon")
+        });
+
+        $(".after_function").click(function () {
+            $(".after_function").after("is my name")
+        });
+
+        $(".append_button").click(function () {
+            $("h6").append("athan")
+        });
+
+        $(".html_button").click(function () {
+            $(".html_button").html("some words")
+        });
+          });
+  </script>
+  <title>Title</title>
+
+
+</head>
+<body>
+  <div class="wrapper">
+    <div class="jquery_functions">
+      <h1>Hide and Show</h1>
+      <button class="hide_button" type="button">Hide</button>
+      <button class="show_button" type="button">Show</button>
+      <br>
+      <br>
+      <button class="toggle_button" type="button">Toggle</button>
+      <img src="Screenshot%20(3).png" class="webpic1" height="125" width="125">
+      <br>
+      <h2>Toggles text up and down</h2>
+      <p>This slides up and down</p>
+      <br>
+      <img src="Screenshot%20(3).png" class="webpic2" height="125" width="125">
+      <button class="slide_toggle_button" type="button">Slide Toggle</button>
+      <br>
+      <div class="red"></div>
+      <h3>Changes to Red</h3>
+      <button class="add_class_button" type="button">Add Class</button>
+      <br>
+      <h4>Fades In and Out</h4>
+      <button class="fade_out_button" type="button">Fade Out</button>
+      <button class="fade_in_button" type="button">Fade In</button>
+      <br>
+      <h5 class="before_function">is my name</h5>
+      <h6 class="after_function">Jon</h6>
+      <br>
+      <button class="append_button">Append</button>
+      <br>
+      <br>
+      <button class="html_button">HTML</button>
+      <
+    </div>
+  </div>
+
+</body>
+
+
+</html>

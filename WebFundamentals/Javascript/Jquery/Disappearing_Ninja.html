@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Disappearing Ninja</title>
+  <script type="text/javascript" src="jquery-3.1.1.js"></script>
+  <script type="text/javascript">
+      $(document).ready(function() {
+          $("img").click(function () {
+              $(this).fadeOut(500)
+          });
+          $(".button1").click(function () {
+              $(".ninja").show()
+          });
+      });
+  </script>
+  <style>
+    .wrapper {
+      text-align: center;
+      width: 900px;
+      margin: auto;
+      height: 100%;
+    }
+    .button1 {
+      background-color: green;
+
+    }
+    .main_body {
+      width: auto;
+    }
+    .ninja {
+      border: solid black 1px;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <h1>Disappearing Ninjas!</h1>
+    <div class="main_body">
+      <img src="ninja.png" class="ninja">
+      <img src="ninja.png" class="ninja">
+      <img src="ninja.png" class="ninja">
+      <img src="ninja.png" class="ninja">
+      <img src="ninja.png" class="ninja">
+      <img src="ninja.png" class="ninja">
+      <img src="ninja.png" class="ninja">
+      <img src="ninja.png" class="ninja">
+    </div>
+    <div class="refresh_button">
+      <button type="button" class="button1">Refresh</button>
+    </div>
+  </div>
+</body>
+</html>
