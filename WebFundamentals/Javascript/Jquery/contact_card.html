@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact Card</title>
+  <script type="text/javascript" src="jquery-3.1.1.js"></script>
+  <script type="text/javascript">
+
+      var id = 1;
+      $(document).ready(function() {
+          $("#btn").click(function() {
+              var first = $("#first").val();
+              var last = $("#last").val();
+              var desc = $("#desc").val();
+              var contactId = "contact-" + id;
+              var infoId = "info-" + id;
+              var contactCardId = "#" + contactId;
+              var infoCardId = "#" + infoId;
+
+              var cardHtml =
+                  "<div class='contact-card' id='" + contactId + "'>" +
+                    "<h4>" + first + "</h4><h4>" + last + "</h4>" +
+                  "</div>" +
+                  "<div class='info-card' id='" + infoId + "'>" +
+                    "<h4>" + desc + "</h4>" +
+                  "</div>";
+
+              $("#cards").append(cardHtml);
+
+              $(contactCardId).show();
+
+              $(contactCardId).click(function () {
+                  $(this).hide();
+                  $(infoCardId).show();
+              });
+
+              $(infoCardId).click(function () {
+                  $(this).hide();
+                  $(contactCardId).show();
+              });
+
+              id+=1;
+          });
+      });
+
+  </script>
+  <style>
+    .fields {
+      width: 19%;
+      height: 100%;
+      display: inline-block;
+    }
+    .fields label{
+      text-align: left;
+      margin: 20px;
+    }
+    .contact-card {
+      height: 200px;
+      width: 200px;
+      border: solid black 2px;
+      display: none;
+      text-align: center;
+    }
+    .info-card {
+      height: 200px;
+      width: 200px;
+      border: solid black 2px;
+      display: none;
+      text-align: center;
+      background: red;
+    }
+
+
+
+  </style>
+</head>
+<body>
+<form id="fields" class="fields">
+  <label>
+  First Name: <input type="text" id="first" placeholder="First Name">
+  </label>
+  <label>
+  Last Name: <input type="text" id="last" placeholder="Last Name">
+  </label>
+  Description<textarea id="desc" name="Description" placeholder="Enter Description"></textarea>
+  <button type="button" id="btn">Add User</button>
+</form>
+<div id="cards">
+
+</div>
+</body>
+</html>
