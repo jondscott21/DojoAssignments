@@ -18,11 +18,11 @@
               var infoCardId = "#" + infoId;
 
               var cardHtml =
-                  "<div class='contact-card' id='" + contactId + "'>" +
-                    "<h4>" + first + "</h4><h4>" + last + "</h4>" +
+                  "<div class='contact-card' id='" + contactId + "'><h4>Name: </h4>" +
+                    "<p>" + first + "</p><p>" + last + "</p>" +
                   "</div>" +
                   "<div class='info-card' id='" + infoId + "'>" +
-                    "<h4>" + desc + "</h4>" +
+                    "<p>" + desc + "</p>" +
                   "</div>";
 
               $("#cards").append(cardHtml);
@@ -46,28 +46,39 @@
   </script>
   <style>
     .fields {
-      width: 19%;
+      width:18%;
       height: 100%;
       display: inline-block;
     }
-    .fields label{
-      text-align: left;
-      margin: 20px;
+    .fields input{
+      /*text-align: left;*/
+      margin: 10px;
+    }
+    .fields textarea{
+      margin: 10px;
+    }
+    .cards {
+      width: 70%;
+      height: 50%;
+      display: inline-block;
+      vertical-align: top;
+
     }
     .contact-card {
-      height: 200px;
-      width: 200px;
+      height: 150px;
+      width: 250px;
       border: solid black 2px;
       display: none;
+      background: antiquewhite;
       text-align: center;
     }
     .info-card {
-      height: 200px;
-      width: 200px;
+      height: 150px;
+      width: 250px;
       border: solid black 2px;
       display: none;
       text-align: center;
-      background: red;
+      background: antiquewhite;
     }
 
 
@@ -76,16 +87,12 @@
 </head>
 <body>
 <form id="fields" class="fields">
-  <label>
-  First Name: <input type="text" id="first" placeholder="First Name">
-  </label>
-  <label>
-  Last Name: <input type="text" id="last" placeholder="Last Name">
-  </label>
-  Description<textarea id="desc" name="Description" placeholder="Enter Description"></textarea>
+  <input type="text" id="first" class="first" placeholder="First Name">
+  <input type="text" id="last" class="last" placeholder="Last Name">
+  <textarea id="desc" class="desc" name="Description" placeholder="Enter Description"></textarea>
   <button type="button" id="btn">Add User</button>
 </form>
-<div id="cards">
+<div id="cards" class="cards">
 
 </div>
 </body>
