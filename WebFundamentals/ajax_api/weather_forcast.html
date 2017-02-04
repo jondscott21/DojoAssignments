@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Weather Forecast</title>
+  <script type="text/javascript" src="jquery-3.1.1.js"></script>
+  <script type="text/javascript">
+    var apiKey = "9edc0ab1956e410c586c2fd45a320ed1";
+      $(document).ready(function() {
+            $("form").submit(function () {
+                var useinput = $(".cityname").val();
+                $.get("http://api.openweathermap.org/data/2.5//weather?q=" + useinput  + "&APPID=" + apiKey, function (res) {
+                    var tempfixed = Math.floor(res.main['temp'] * (9/5) -459.67);
+                    $(".testdiv").html("<h1>" + res.name + "</h1>" +
+                        "<h2>" + tempfixed + " F " + "</h2>");
+                }, "json");
+                return false;
+
+          });
+
+      });
+  </script>
+  <style>
+    .testdiv {
+      height: auto;
+      width: auto;
+    }
+  </style>
+</head>
+<body>
+<form>
+  <input type="text" name="cityname" class="cityname">
+  <button type="submit" class="btn">Search Weather</button>
+</form>
+<div class="testdiv"></div>
+
+
+</body>
+</html>

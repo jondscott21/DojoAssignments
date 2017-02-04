@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Pokemon</title>
+  <script type="text/javascript" src="jquery-3.1.1.js"></script>
+  <script type="text/javascript">
+    var arr = [];
+    var x = 0;
+    function pokeLoop() {
+        for (var i = 0; i < 152; i++) {
+            x += 1;
+            arr.push("<img id='" + x + "' src='http://pokeapi.co/media/img/" + x + ".png'>");
+        }
+        return (arr);
+    }
+      $(document).ready(function() {
+          $(".pokemon").append(pokeLoop());
+          $(document).on("click", "img" ,function () {
+              var img_call = $(this).attr("id");
+              $.get("http://pokeapi.co/api/v1/pokemon/" + $(this).attr("id") + "/", function(res) {
+                  $(".pokedex").html("<h1>" + res.name + "</h1><img src='http://pokeapi.co/media/img/" + img_call +".png'><h3>Types</h3><ul><li>" + res.types[0].name + "</li></ul><h3>Height</h3><p>" + res.height + "</p><h3>Weight</h3><p>" + res.weight + "</p>");
+
+              }, "json");
+
+          });
+
+      });
+  </script>
+  <style>
+    .pokemon {
+      width: 70%;
+      height: 100%;
+      display: inline-block;
+    }
+    .pokedex {
+      height: 500px;
+      width: 25%;
+      border: solid red 15px;
+      display: inline-block;
+      /*vertical-align: top;*/
+      position: fixed;
+    }
+  </style>
+</head>
+<body>
+<div class="pokemon"></div>
+<div class="pokedex"></div>
+<!--<button type="button" class="btn">POKEGO</button>-->
+</body>
+</html>

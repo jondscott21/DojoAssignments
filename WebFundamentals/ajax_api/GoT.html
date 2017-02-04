@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>GoT</title>
+  <script type="text/javascript" src="jquery-3.1.1.js"></script>
+  <script type="text/javascript">
+      $(document).ready(function () {
+          $(document).on("click", "img", function () {
+              var details = $(this).attr("id");
+              $(".info_card").css("visibility", "visible");
+              $.get("http://anapioficeandfire.com/api/houses/" + details, function (res) {
+                  $(".info_card").html("<h2>Name: " + res.name + "</h2><h2>Words: " + res.words + "</h2><h2>Titles: " + res.titles + "</h2>");
+
+              }, "json");
+          });
+
+      });
+  </script>
+  <style>
+    .wrapper {
+      height: 900px;
+      width: 100%;
+      background: #454648;
+    }
+    .house_img {
+      width: 100%;
+      height: auto;
+      display: block;
+      text-align: center;
+    }
+    .baratheon {
+      width: 20%;
+      height: 200px;
+      display: inline-block;
+      margin: 10px;
+    }
+    .lannister {
+      width: 20%;
+      height: 200px;
+      display: inline-block;
+      margin: 10px;
+    }
+    .stark {
+      width: 20%;
+      height: 200px;
+      display: inline-block;
+      margin: 10px;
+    }
+    .targaryen {
+      width: 20%;
+      height: 200px;
+      display: inline-block;
+      margin: 10px;
+    }
+    .info_card {
+      height: 25%;
+      width: 50%;
+      border: solid black 2px;
+      visibility: hidden;
+      text-align: center;
+      color: black;
+      background: antiquewhite;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+<body>
+<div class="wrapper">
+  <div class="house_img">
+    <img src="baratheon.png" id="17" class="baratheon" alt="baratheon">
+    <img src="lannister.jpg" id="229" class="lannister" alt="lannister">
+    <img src="stark.jpg" id="362" class="stark" alt="stark">
+    <img src="targaryen.jpg" id="378" class="targaryen" alt="targaryen">
+  </div>
+  <div class="info_card"></div>
+</div>
+</body>
+</html>
