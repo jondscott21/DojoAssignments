@@ -1,0 +1,9 @@
+1. pip install django - package manager adds a python framework
+2. pip list - shows installed packages
+3. pip install django - Requirements already met
+4. pip freeze - puts out a list of packages in requirements format vs. list which shows installed packages
+5. in Desktop - pip freeze > reqirements.txt - creates a .txt file of package requirements
+6. pip uninstall django - removes django
+7. pip show django - nothing shows up
+8. pip search flask - looks like a list of packages associated with flask
+
