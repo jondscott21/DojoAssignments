@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="">
+    <title>Ninja Gold</title>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    .wrapper {
+        margin: auto;
+        text-align: center;
+    }
+    .your_gold {
+        display: block;
+        height: 200px;
+    }
+    .farm {
+        display: inline-block;
+        height: 150px;
+        width: 150px;
+        border: solid black 1px;
+    }
+    .farm input {
+        position: relative;
+        top: 100px;
+    }
+    .cave {
+        display: inline-block;
+        height: 150px;
+        width: 150px;
+        border: solid black 1px;
+    }
+    .cave input {
+        position: relative;
+        top: 100px;
+    }
+    .house {
+        display: inline-block;
+        height: 150px;
+        width: 150px;
+        border: solid black 1px;
+    }
+    .house input {
+        position: relative;
+        top: 100px;
+    }
+    .casino {
+        display: inline-block;
+        height: 150px;
+        width: 150px;
+        border: solid black 1px;
+    }
+    .casino input {
+        position: relative;
+        top: 100px;
+    }
+</style>
+</head>
+
+<body>
+<div class="wrapper">
+    <form class="your_gold">
+        <input type="text" value="Gold: {{session.gold}}">
+    </form>
+    <form class="farm" action="/process_money" method="post">
+        <input type="hidden" name="building" value="farm">
+        Farm<input type="submit" name="farm_gold" value="Find Gold!">
+    </form>
+    <form class="cave" action="/process_money" method="post">
+        <input type="hidden" name="building" value="cave">
+        Cave<input type="submit" name="cave_gold" value="Find Gold!">
+    </form>
+    <form class="house" action="/process_money" method="post">
+        <input type="hidden" name="building" value="house">
+        House<input type="submit" name="house_gold" value="Find Gold!">
+    </form>
+    <form class="casino" action="/process_money" method="post">
+        <input type="hidden" name="building" value="casino">
+        Casino<input type="submit" name="casino_gold" value="Find Gold!">
+    </form>
+    <form>
+        <textarea rows="15" cols="30">{{session['log']}}</textarea>
+    </form>
+</div>
+</body>
+</html>

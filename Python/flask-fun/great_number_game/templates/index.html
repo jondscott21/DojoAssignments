@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="">
+    <title>Number Game</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            text-align: center;
+    </style>
+</head>
+<body>
+<h1>Welcome to the great number game!</h1>
+<br>
+<p>I am thinking of a number between 1 and 100</p>
+<p>Take a guess!</p>
+<p>{{session['result']}}</p>
+<br>
+{% if session['win'] == session['guess']: %}
+<form class="won" action="/winner">
+    <input type="submit" name="play_again" value="Play Again">
+</form>
+{% endif %}
+<form class="not_win" action="/game" method="post">
+    {% if session['win'] != session['guess']: %}
+    <input type="text" name="guess" placeholder="Input Number">
+    <input type="submit" name="btn" value="Submit">
+    {% endif %}
+</form>
+</body>
+</html>

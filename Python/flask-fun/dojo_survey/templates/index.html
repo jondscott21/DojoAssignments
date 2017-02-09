@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Form Index</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='dojo_survey_index.css') }}">
+    </head>
+    <body>
+        <div class="form_box">
+      <!-- read on to learn about form actions, we'll talk about the method in a later section -->
+            <form action='/results' method='post'>
+                <br>
+                Name: <input type='text' name='name'>
+                <br>
+                <br>
+                Dojo Location: <select name="dojo_loc">
+                <option name="san_jose">San Jose</option>
+                <option name="dallas">Dallas</option>
+                <option name="Seattle">Seattle</option>
+                <option name="chicago">Chicago</option>
+                </select>
+                <br>
+                <br>
+                Favorite Language: <select name="fav_lang">
+                <option name="english">English</option>
+                <option name="german">German</option>
+                <option name="mandarin">Mandarin</option>
+                <option name="french">French</option>
+                <option name="spanish">Spanish</option>
+                </select>
+                <br>
+                <br>
+                <input type='submit' value='create user'>
+                <br>
+            </form>
+        </div>
+    </body>
+</html>

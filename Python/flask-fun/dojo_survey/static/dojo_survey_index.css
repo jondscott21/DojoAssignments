@@ -1,0 +1,13 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.form_box {
+    width: 400px;
+    height: 500px;
+    border: solid black 1px;
+
+}
+.form_box form{
+    text-align: -webkit-right;
+}
