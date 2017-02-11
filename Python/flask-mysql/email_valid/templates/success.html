@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="">
+    <title>Title</title>
+</head>
+<body>
+{% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                        {% for message in messages %}
+                            <div class="fail" >
+                                <h4>{{message}}</h4>
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+<h1>Email Addresses Entered</h1>
+{% for email in all_emails: %}
+   <p>{{ email['id'] }} {{ email['email'] }} {{ email['created_at'] }}</p>
+
+{% endfor %}
+</body>
+</html>

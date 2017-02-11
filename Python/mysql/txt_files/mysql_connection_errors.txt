@@ -1,0 +1,10 @@
+1 - local host wrong 
+sqlalchemy.exc.OperationalError: (_mysql_exceptions.OperationalError) (2003, "Can't connect to MySQL server on '127.0.0.1' (10061)")
+2 - wrong password
+sqlalchemy.exc.OperationalError: (_mysql_exceptions.OperationalError) (1045, "Access denied for user 'root'@'localhost' (using password: YES)")
+3- wrong database link
+'database': b, # we got db as an argument
+NameError: global name 'b' is not defined
+4 - wrong keyword: changed 'user'
+DATABASE_URI = "mysql://{}:{}@127.0.0.1:{}/{}".format(config['user'], config['password'], config['port'], config['database'])
+KeyError: 'user'

@@ -6,10 +6,16 @@
     </head>
     <body>
         <div class="form_box">
-      <!-- read on to learn about form actions, we'll talk about the method in a later section -->
-            <form action='/results' method='post'>
+            {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                        {% for message in messages %}
+                            <h4>{{message}}</h4>
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+            <form id="subform" action='/results' method='post'>
                 <br>
-                Name: <input type='text' name='name'>
+                Name: <input type='text' name='name' placeholder="Name Here">
                 <br>
                 <br>
                 Dojo Location: <select name="dojo_loc">
@@ -28,6 +34,10 @@
                 <option name="spanish">Spanish</option>
                 </select>
                 <br>
+                <br>
+                <p>Comment (optional):</p>
+
+                <textarea form="subform" name="comment" rows="7" cols="28" placeholder="Comment here:"></textarea>
                 <br>
                 <input type='submit' value='create user'>
                 <br>

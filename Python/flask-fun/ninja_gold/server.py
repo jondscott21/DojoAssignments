@@ -24,22 +24,22 @@ def process_money():
     if choice == 'farm':
         session['farmgold'] = random.randrange(10, 21)
         session['gold'] = int(session['gold']) +session['farmgold']
-        session['log'] += "Earned " + str(session['farmgold']) + " gold from the farm!\n" + str(datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
+        session['log'] += "Earned " + str(session['farmgold']) + " gold from the farm!" + str(datetime.now().strftime('%Y-%m-%d %H:%M:%S')) + "\n"
         print session['gold']
     if choice == 'cave':
         session['cavegold'] = random.randrange(5, 11)
         session['gold'] = int(session['gold']) + session['cavegold']
-        session['log'] += "Earned " + str(session['cavegold']) + " gold from the cave!\n" + str(datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
+        session['log'] += "Earned " + str(session['cavegold']) + " gold from the cave!" + str(datetime.now().strftime('%Y-%m-%d %H:%M:%S')) + "\n"
         print session['gold']
     if choice == 'house':
         session['housegold'] = random.randrange(1, 6)
         session['gold'] = int(session['gold']) + session['housegold']
-        session['log'] += "Earned " + str(session['housegold']) + " gold from the house!\n" + str(datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
+        session['log'] += "Earned " + str(session['housegold']) + " gold from the house!" + str(datetime.now().strftime('%Y-%m-%d %H:%M:%S')) + "\n"
         print session['gold']
     if choice == 'casino':
         session['casinogold'] = random.randrange(-50, 51)
         session['gold'] = int(session['gold']) + session['casinogold']
-        session['log'] += "Earned " + str(session['casinogold']) + " gold from the casino!\n" + str(datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
+        session['log'] += "Earned " + str(session['casinogold']) + " gold from the casino!" + str(datetime.now().strftime('%Y-%m-%d %H:%M:%S')) + "\n"
         print random.randrange(-50, 51)
         print session['gold']
 

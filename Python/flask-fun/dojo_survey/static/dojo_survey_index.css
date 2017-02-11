@@ -2,6 +2,9 @@
     padding: 0;
     margin: 0;
 }
+body {
+    background: antiquewhite;
+}
 .form_box {
     width: 400px;
     height: 500px;

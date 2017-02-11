@@ -1,0 +1,4 @@
+select  from faves - list 'faves'
+insert into tweets (tweet, user_id, created_at)
+values ('some cool stuff', 1, now()) - inserted stuff into tweets
+delete from tweets where id = 14 - removed insert changes

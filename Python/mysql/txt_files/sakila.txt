@@ -1,0 +1,19 @@
+1.
+select city.city_id, city.city, customer.first_name, customer.last_name, customer.email, address
+
+from city
+
+join address on city.city_id = address.city_id
+
+join customer on address.address_id = customer.address_id
+
+where city.city_id = 312;
+
+2.
+select film.title, film.description, film.release_year, film.rating, film.special_features, category.name
+from film
+left join film_category on film.film_id = film_category.film_id
+left join category on film_category.category_id = category.category_id
+where category.category_id = 5;
+3.
+select film.film_title, film.description, film.release_year
