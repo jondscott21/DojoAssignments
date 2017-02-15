@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="">
+    <title>login_reg</title>
+</head>
+<body>
+{% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                        {% for message in messages %}
+                            <h4>{{message}}</h4>
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+    <h1>Registration</h1>
+    <form action="/create_user" method="post">
+        <input type="text" name="first_name" placeholder="First name">
+        <input type="text" name="last_name" placeholder="Last name">
+        <input type="text" name="email" placeholder="email">
+        <input type="text" name="password" placeholder="Password">
+        <input type="text" name="confirm" placeholder="Confirm PW">
+        <input type="submit" value="Submit">
+    </form>
+    <h1>Log In</h1>
+    <form action="/validation" method="post">
+        <input type="text" name="email" placeholder="email">
+        <input type="text" name="password" placeholder="Password">
+        <input type="submit" value="Submit">
+    </form>
+    <form action="/log_out" method="get">
+        <input type="submit" value="Log Out">
+    </form>
+    <form action="/message" method="post">
+        <textarea name="message" cols="70" rows="10"></textarea>
+        <input type="submit" value="Post a message">
+    </form>
+    <hr>
+    {% for message in all_messages: %}
+            <h3>{{user_name[0]['name']}} - {{message['created_at']}}</h3>
+            <p>{{ message['message']}}</p>
+            <form action="/delete/{{message['id']}}" method="get">
+                <input type="submit" value="Delete">
+            </form>
+            <hr>
+            {% for comment in all_comments: %}
+                {% if comment['message_id'] == message['id']: %}
+                        <h4>{{comment['commenter']}} - {{comment['created']}}</h4>
+                        <p>{{comment['comment']}}</p>
+                {% endif %}
+            {% endfor %}
+
+
+            <h4>Post a comment</h4>
+            <form action="/comment" method="post">
+                <input type="hidden" name="messageid" value="{{message['id']}}">
+                <textarea name="comment" cols="70" rows="5"></textarea>
+                <input type="submit" value="Post a comment">
+            </form>
+    {% endfor %}
+
+</body>
+</html>

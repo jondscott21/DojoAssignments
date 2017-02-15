@@ -1,0 +1,16 @@
+[{u'created_at': datetime.datetime(2017, 2, 10, 17, 14, 38), u'first_name': u'Jay', u'last_name': u'Patel', u'id': 1L, u'email': u'Instructor'}]
+[{u'created_at': datetime.datetime(2017, 2, 10, 17, 14, 38), u'first_name': u'Jay', u'last_name': u'Patel', u'id': 1L, u'email': u'Instructor'}]
+<table>
+<tr>
+    <td>{{ edit_friend[0]["first_name"] }}</td>
+    <td>{{ edit_friend[0]["last_name"] }}</td>
+    <td>{{ edit_friend[0]["email"] }}</td>
+    <td>{{ edit_friend[0]["created_at"] }}</td>
+    <form action="/friends/{{ edit_friend['id'] }}" method="POST">
+        <input type="text" name="first_name" value="{{ edit_friend[0]["first_name"] }}">
+        <input type="text" name="last_name" value="{{ edit_friend[0]["last_name"] }}">
+        <input type="text" name="email" value="{{ edit_friend[0]["email"] }}">
+        <input type="submit" value="Submit">
+    </form>
+</tr>
+</table>

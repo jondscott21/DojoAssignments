@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="">
+    <title>Edit</title>
+</head>
+<body>
+<table>
+<tr>
+    <td>{{ edit_friend[0]["first_name"] }}</td>
+    <td>{{ edit_friend[0]["last_name"] }}</td>
+    <td>{{ edit_friend[0]["email"] }}</td>
+    <td>{{ edit_friend[0]["created_at"] }}</td>
+    <form action="/friends/{{ edit_friend[0]['id'] }}" method="POST">
+        <input type="text" name="first_name" value="{{ edit_friend[0]["first_name"] }}">
+        <input type="text" name="last_name" value="{{ edit_friend[0]["last_name"] }}">
+        <input type="text" name="email" value="{{ edit_friend[0]["email"] }}">
+        <input type="submit" value="Submit">
+    </form>
+</tr>
+</table>
+</body>
+</html>

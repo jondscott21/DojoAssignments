@@ -1,0 +1,12 @@
+    email = request.form['email']
+    username = request.form['username']
+    password = request.form['password']
+    pw_hash = bcrypt.generate_password_hash(password)
+    insert_query = "INSERT INTO users (first_name, last_name, email, pw_hash, created_at, updated_at) VALUES (:first_name, :last_name, :email :pw_hash, NOW(), now())"
+    query_data = {
+                'first_name': first_name,
+                'last_name': last_name,
+                'email': email,
+                'pw_hash': pw_hash
+                }
+    mysql.query_db(insert_query, query_data)
