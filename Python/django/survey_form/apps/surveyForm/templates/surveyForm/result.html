@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="">
+    <title>Result</title>
+</head>
+<body>
+<h1>You have submitted this {{ request.session.count }} time(s).</h1>
+<p>{{ request.session.name }}</p>
+<p>{{ request.session.loc }}</p>
+<p>{{ request.session.lang }}</p>
+<p>{{ request.session.comment }}</p>
+<form action="/" method="get">
+    <input type="submit" value="Go Back">
+</form>
+</body>
+</html>

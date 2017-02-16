@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="">
+    <title>Survey Form</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background: antiquewhite;
+        }
+        .form_box {
+            text-align: -webkit-right;
+            position: relative;
+            right: 850px;
+            top: 200px;
+        }
+    </style>
+</head>
+<body>
+<div class="form_box">
+    <form class="survey" action="/process" method="post">
+        <label>Name:</label>
+        <input type="text" name="name">
+        <br>
+        <br>
+        <label>Dojo Location:</label>
+        <select name="loc">
+            <option value="mountain_view">Mountain View</option>
+            <option value="berkley">Berkley</option>
+            <option value="seattle">Seattle</option>
+            <option value="dallas">Dallas</option>
+        </select>
+        <br>
+        <br>
+        <label>Favorite Language:</label>
+        <select name="lang">
+            <option value="Java Script">Java Script</option>
+            <option value="python">Python</option>
+            <option value="ruby">Ruby</option>
+            <option value="swift">Swift</option>
+        </select>
+        <br>
+        <br>
+        <label>Comment (optional):</label>
+        <textarea name="comment" cols="25" rows="5"></textarea>
+        <br>
+        {% csrf_token %}
+        <input type="submit" value="submit">
+    </form>
+</div>
+</body>
+</html>

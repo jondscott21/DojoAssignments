@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="">
+    <title>Random Word</title>
+    <style>
+        body {
+            text-align: center;
+            background: antiquewhite;
+        }
+    </style>
+</head>
+<body>
+    <h2>This is try number {{ request.session.num }}</h2>
+    <h1>{{ request.session.stuff }}</h1>
+    <form action="/increase" method="post">
+        {% csrf_token %}
+        <input type="submit" value="Increase" name="increase">
+    </form>
+
+</body>
+</html>
