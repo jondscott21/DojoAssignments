@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="">
+    <title>Ninja Gold</title>
+</head>
+<body>
+<h1>Your Gold: {{request.session.gold}}</h1>
+<form action="/process_money/farm">
+    <input type="submit" value="Find Gold!">
+</form>
+<form action="/process_money/cave">
+    <input type="submit" value="Find Gold!">
+</form>
+<form action="/process_money/house">
+    <input type="submit" value="Find Gold!">
+</form>
+<form action="/process_money/casino">
+    <input type="submit" value="Find Gold!">
+</form>
+<div>
+    {% for item in request.session.log %}
+        <p>{{ item }}</p>
+    {% endfor %}
+</div>
+</body>
+</html>
